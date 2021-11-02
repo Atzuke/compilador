@@ -1,4 +1,5 @@
 ﻿using compilador.AnalisisLexico;
+using compilador.AnalisisSintactico;
 using compilador.ManejadorErrores;
 using compilador.TablaSimbolos;
 using compilador.Transversal;
@@ -59,24 +60,10 @@ namespace compilador
                     linea = lector.ReadLine();
                     i = i + 1;
                 }
-               
-
-
-                
-
-
-
                 try
                 {
-                    AnalizadorLexico AnaLex = new AnalizadorLexico();
-                    ComponenteLexico Componente = AnaLex.DevolverComponenteLexico();
-                    while (!Categoria.FIN_ARCHIVO.Equals(Componente.ObtenerCategoria()))
-                    {
-                        Componente = AnaLex.DevolverComponenteLexico();
-                        
-
-
-                    }
+                    AnalizadorSintactico AnaSin = new AnalizadorSintactico();
+                    AnaSin.Analizar();
                 }
                 catch(Exception excepcion)
                 {

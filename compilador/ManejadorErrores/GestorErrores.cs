@@ -8,6 +8,7 @@ namespace compilador.ManejadorErrores
 {
     public class GestorErrores
     {
+
         private Dictionary<TipoError, List<Error>> Tabla = new Dictionary<TipoError, List<Error>>();
         private static GestorErrores INSTANCIA = new GestorErrores();
 
